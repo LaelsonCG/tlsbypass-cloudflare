@@ -21,17 +21,19 @@ RED='\033[0;31m'
 NC='\033[0m' # Sem cor
 
 # ----------------------------
-# Função de download com barra de progresso
+# Função de download com curl
 # ----------------------------
 download() {
     url=$1
     dest=$2
     echo -e "${BLUE}📥 Baixando $(basename $dest)...${NC}"
-    wget --progress=bar:force -O "$dest" "$url" 2>&1 | \
-    grep --line-buffered "%" | \
-    sed -u -e "s,\.,,g" | \
-    awk '{printf("\r%s %s", "'$YELLOW'", $0)}'
-    echo -e "\n${GREEN}✅ Download concluído: $(basename $dest)${NC}"
+    curl -L --progress-bar -o "$dest" "$url"
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}✅ Download concluído: $(basename $dest)${NC}"
+    else
+        echo -e "${RED}❌ Falha no download: $(basename $dest)${NC}"
+        exit 1
+    fi
 }
 
 # ----------------------------
@@ -62,7 +64,9 @@ systemctl daemon-reload
 systemctl enable tlsbypass.service
 systemctl restart tlsbypass.service
 
+# ----------------------------
 # Verificação do status
+# ----------------------------
 sleep 1
 status=$(systemctl is-active tlsbypass.service)
 if [ "$status" == "active" ]; then
