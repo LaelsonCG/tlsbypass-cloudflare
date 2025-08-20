@@ -1,13 +1,13 @@
 # 🛡 TLSBypass Cloudflare
 
-Servidor **Bypass WebSocket + TLS** que só aceita conexões via domínio ou subdomínio com **proxy do Cloudflare ativo** (não DNS-only). Ideal para uso com **VPN ou túnel SSH**.
+Servidor **Bypass WebSocket + TLS** para conexões via domínio ou subdomínio com **proxy do Cloudflare ativo** (não DNS-only). Ideal para uso com **VPN ou túnel SSH**.
 
 ---
 
 ## ⚙️ Requisitos
 
 1. **Dropbear SSH** instalado na porta **115** (pode ser feito via SSHPLUS).  
-2. Sistema Linux com **bash**, **wget** e **Python 3** instalado.
+2. Sistema Linux com **bash**, **wget** e **Python 3.x** instalado.
 
 ---
 
@@ -35,7 +35,7 @@ O comando irá baixar e configurar automaticamente o servidor, incluindo todas a
 
 ### 💉 Modelos de Payload:
 
-Funciona exclusivamente e somente com métodos que usam **proxy da operadora (host no cloudflare)*
+Funciona exclusivamente e somente com métodos que usam **proxy da operadora (host no cloudflare)**
 
 ```bash
 [split]ACL /bypass HTTP/1.1[crlf]Host: [host][crlf]Upgrade: Websocket[crlf][crlf]
@@ -54,6 +54,6 @@ ACL /bypass HTTP/1.1[crlf]Host: [host][crlf]Upgrade: Websocket[crlf][crlf]
 
 ## 📌 Observações:
 
-- Certifique-se de que a porta 8080 não está em uso por outro serviço e está liberada no firewall (caso tenha um firewall instalado).
+- Certifique-se de que a porta 8080 não esteja em uso por outro serviço e que está liberada no firewall (caso tenha um firewall instalado).
 
 - O serviço mantém o túnel para Dropbear na porta 115, garantindo compatibilidade com SSH/VPN.
