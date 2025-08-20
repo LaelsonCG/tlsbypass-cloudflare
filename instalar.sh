@@ -26,6 +26,13 @@ NC='\033[0m' # Sem cor
 download() {
     url=$1
     dest=$2
+
+    # Remover arquivo antigo se existir
+    if [ -f "$dest" ]; then
+        echo -e "${YELLOW}🗑 Arquivo antigo encontrado: $(basename $dest) → removendo...${NC}"
+        rm -f "$dest"
+    fi
+
     echo -e "${BLUE}📥 Baixando $(basename $dest)...${NC}"
     curl -L --progress-bar -o "$dest" "$url"
     if [ $? -eq 0 ]; then
