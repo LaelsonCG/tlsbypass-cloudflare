@@ -54,6 +54,6 @@ ACL /bypass HTTP/1.1[crlf]Host: [host][crlf]Upgrade: Websocket[crlf][crlf]
 
 ## 📌 Observações:
 
-- Certifique-se de que a porta 8080 está liberada no firewall e roteadores.
+- Certifique-se de que a porta 8080 não está em uso por outro serviço e está liberada no firewall (caso tenha um firewall instalado).
 
 - O serviço mantém o túnel para Dropbear na porta 115, garantindo compatibilidade com SSH/VPN.
