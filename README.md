@@ -33,7 +33,7 @@ O comando irá baixar e configurar automaticamente o servidor, incluindo todas a
 
 ---
 
-### Modelos de Payload:
+### 💉 Modelos de Payload:
 
 Funciona exclusivamente e somente com métodos que usam **proxy da operadora (host no cloudflare)*
 
