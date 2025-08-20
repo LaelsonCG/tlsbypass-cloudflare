@@ -16,7 +16,8 @@ Servidor Bypass WebSocket + TLS que só aceita conexões via domínio ou subdom�
 Execute o comando abaixo para instalar o TLSBypass:
 
 ```bash
-bash <(wget -qO- https://raw.githubusercontent.com/LaelsonCG/tlsbypass-cloudflare/main/instalar.sh)```
+bash <(wget -qO- https://raw.githubusercontent.com/LaelsonCG/tlsbypass-cloudflare/main/instalar.sh)
+```
 
 O comando irá baixar e configurar automaticamente o servidor, incluindo todas as dependências necessárias.
 
