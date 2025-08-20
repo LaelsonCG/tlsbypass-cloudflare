@@ -1,0 +1,13 @@
+[Unit]
+Description=Bot de SSH
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/speednet
+ExecStart=/opt/speednet/tlsbypass.py
+Restart=always
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target
