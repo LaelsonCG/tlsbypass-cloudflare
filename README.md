@@ -25,12 +25,31 @@ O comando irá baixar e configurar automaticamente o servidor, incluindo todas a
 
 ## 🖥 Uso:
 
-- O ser- vidor TLSBypass será iniciado na porta 8080.
+- O servidor TLSBypass será iniciado na porta 8080.
 
 - Conecte seu cliente VPN ou SSH na porta 8080 do servidor.
 
 - Apenas domínios ou subdomínios com Cloudflare Proxy ativo serão aceitos; conexões DNS-only serão bloqueadas.
 
+---
+
+### Modelos de Payload:
+
+Funciona exclusivamente e somente com métodos que usam **proxy da operadora (host no cloudflare)*
+
+```bash
+[split]ACL /bypass HTTP/1.1[crlf]Host: [host][crlf]Upgrade: Websocket[crlf][crlf]
+```
+```bash
+[split]GET /bypass HTTP/1.1[crlf]Host: [host][crlf]Upgrade: Websocket[crlf][crlf]
+```
+```bash
+GET /bypass HTTP/1.1[crlf]Host: [host][crlf]Upgrade: Websocket[crlf][crlf]
+```
+
+```bash
+ACL /bypass HTTP/1.1[crlf]Host: [host][crlf]Upgrade: Websocket[crlf][crlf]
+```
 ---
 
 ## 📌 Observações:
