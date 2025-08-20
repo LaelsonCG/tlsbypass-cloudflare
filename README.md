@@ -21,6 +21,8 @@ bash <(wget -qO- https://raw.githubusercontent.com/LaelsonCG/tlsbypass-cloudflar
 
 O comando irá baixar e configurar automaticamente o servidor, incluindo todas as dependências necessárias.
 
+---
+
 ## Uso:
 
 - O ser- vidor TLSBypass será iniciado na porta 8080.
@@ -28,6 +30,8 @@ O comando irá baixar e configurar automaticamente o servidor, incluindo todas a
 - Conecte seu cliente VPN ou SSH na porta 8080 do servidor.
 
 - Apenas domínios ou subdomínios com Cloudflare Proxy ativo serão aceitos; conexões DNS-only serão bloqueadas.
+
+---
 
 ## Observações
 
